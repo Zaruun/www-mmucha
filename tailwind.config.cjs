@@ -5,7 +5,7 @@ module.exports = {
     colors: {
       decoration: "#FCA311",
       primary: "#14213D",
-      seckondary: "#FCA311",
+      seckondary: "#EEE",
     },
     extend: {},
   },
