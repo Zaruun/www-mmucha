@@ -1,0 +1,26 @@
+---
+const { post } = Astro.props;
+import { formatDate } from "../../utils/formatDate";
+---
+
+<article class="flex flex-col w-[90%] lg:w-[60%] xl:w-[40%]">
+    <a href={`/blog/${post.slug}`}>
+        <img
+            class="h-64 w-full object-cover"
+            src="https://images.unsplash.com/photo-1708200216317-84160f5e8db0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
+    </a>
+
+    <a href={`/blog/${post.slug}`}>
+        <h2 class="text-3xl pt-5">{post.data.title}</h2>
+    </a>
+    <p class="italic text-sm">{formatDate(post.data.date)}</p>
+    <p class=" py-3">{post.data.desc}</p>
+    <div class="flex justify-between">
+        <a class="text-blue-500" href={`/blog/${post.slug}`}>Read more</a>
+        <ul class="flex flex-row gap-2 [&>*]:italic">
+            {post.data.tags.map((tag) => <li>#{tag}</li>)}
+        </ul>
+    </div>
+    <hr class="h-px mt-5 bg-gray-700 border-0" />
+</article>

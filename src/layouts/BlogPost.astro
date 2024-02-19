@@ -1,0 +1,12 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Layout from "./Layout.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, url, tags, date, desc } = Astro.props;
+---
+
+<Layout title={`Mateusz Mucha | ${title}`}>
+    <slot />
+</Layout>
